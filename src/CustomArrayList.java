@@ -11,13 +11,13 @@ public class CustomArrayList<T> extends ArrayList<T> implements CustomList<T> {
         customArrayList.add(56);
         customArrayList.add(34);
 
-        CustomList<String> newStringArrayList = customArrayList.map(new Mapper<Integer>() {
+        CustomList<String> newStringArrayList = customArrayList.map(new Mapper<Integer,String>() {
             @Override
             public String change(Integer o) {
                 o+=23;
                 return o.toString();
             }
-        }, "String");
+        });
 
         System.out.println(newStringArrayList);
 

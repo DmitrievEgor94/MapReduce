@@ -1,3 +1,3 @@
-public interface Mapper<T> {
-    Object change(T o);
+public interface Mapper<T,E> {
+    E change(T o);
 }

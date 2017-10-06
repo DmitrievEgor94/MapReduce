@@ -1,11 +1,10 @@
 import java.util.List;
 
 public interface CustomList<T> extends List<T> {
-    default <E>CustomList<E> map(Mapper<T> ch,E newType) {
+    default <E>CustomList<E> map(Mapper<T,E> ch) {
         CustomList<E> newList = new CustomArrayList<>();
-        System.out.println(newType);
         for (T ob : this) {
-            E newObject=(E)ch.change(ob);
+            E newObject=ch.change(ob);
             newList.add(newObject);
         }
 
